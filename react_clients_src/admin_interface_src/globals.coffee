@@ -12,6 +12,7 @@ React_DOM = require 'react-dom'
 shortid = require 'shortid'
 gl_mat = require 'gl-matrix'
 request = require 'superagent'
+Rx = require 'rxjs'
 
 mat3 = gl_mat.mat3
 vec3 = gl_mat.vec3
