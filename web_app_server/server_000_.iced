@@ -41,19 +41,13 @@ multiplex = require 'primus-multiplex'
 primus.plugin 'emitter', Emitter
 primus.plugin 'multiplex', multiplex
 primus.plugin 'resource', resource
-# primus.use('multiplex', 'primus-multiplex')
-# primus.use 'multiplex', 'primus-multiplex'
-# primus.use 'emitter', 'primus-emitter'
+
 
 primus.save path.join(primus_dir, '/primus.js')
 
-Creature = primus.resource 'creature'
-Creature.oncommand = (spark, command, fn) ->
-    c 'command: ', command
+# require('../primus_layer/resource_000_.iced')(primus)
 
-Creature.onwalk = (spark, fn) ->
-    c 'walk'
-    fn('creature started to walk')
+require('../primus_layer/admin__rpc__api__000__.iced').default(primus)
 
 server.listen port, ->
     c 'express/primus server listening on', port
@@ -62,8 +56,8 @@ server.listen port, ->
 #     c 'tourney pool server listening on ', port
 
 
-primus.on 'connection', (spark)->
-    c 'server has a spark', _.keys(spark)
-
-    primus.write 'hello there and again'
-    primus.write 'and yes'
+# primus.on 'connection', (spark)->
+#     c 'server has a spark', _.keys(spark)
+#
+#     primus.write 'hello there and again'
+#     primus.write 'and yes'

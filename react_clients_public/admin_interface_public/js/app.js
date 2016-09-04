@@ -51,7 +51,7 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var creature, primus;
+	var primus;
 
 	__webpack_require__(2);
 
@@ -61,19 +61,12 @@
 
 	primus = new Primus('http://localhost:2746', {});
 
-	creature = primus.resource('creature');
-
-	creature.on('ready', function() {
-	  creature.command('sleep', function(res) {
-	    return c('res on sleep command', res);
-	  });
-	  return creature.walk(function(res) {
-	    return c('res on walk', res);
-	  });
-	});
-
 	primus.on('data', function(data) {
 	  return c('got some data from the server', data);
+	});
+
+	primus.write({
+	  event_type: 'create_world'
 	});
 
 
