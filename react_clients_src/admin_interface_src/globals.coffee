@@ -13,7 +13,7 @@ shortid = require 'shortid'
 gl_mat = require 'gl-matrix'
 request = require 'superagent'
 Rx = require 'rxjs'
-
+window.primus = new Primus('http://localhost:2746', {})
 mat3 = gl_mat.mat3
 vec3 = gl_mat.vec3
 vec2 = gl_mat.vec2

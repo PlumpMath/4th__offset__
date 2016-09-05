@@ -51,15 +51,13 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var primus;
+	var root, root_component;
 
 	__webpack_require__(2);
 
 	c('here we are in the app');
 
 	c('primus is', Primus);
-
-	primus = new Primus('http://localhost:2746', {});
 
 	primus.on('data', function(data) {
 	  return c('got some data from the server', data);
@@ -68,6 +66,63 @@
 	primus.write({
 	  event_type: 'create_world'
 	});
+
+	setTimeout(function() {
+	  return primus.write({
+	    event_type: 'create_league'
+	  });
+	}, 1000);
+
+	setTimeout(function() {
+	  return primus.write({
+	    event_type: 'create_team'
+	  });
+	}, 2000);
+
+	root = document.getElementById('root');
+
+	root_component = __webpack_require__(372);
+
+	window.onload = (function(_this) {
+	  return function() {
+	    var debounce, height, rectangle, set_boundingRect, width;
+	    rectangle = root.getBoundingClientRect();
+	    width = rectangle.width, height = rectangle.height;
+	    debounce = function(fn, wait, immediate) {
+	      var timeout;
+	      timeout = 'scoped here';
+	      return function() {
+	        var args, callNow, context, later;
+	        context = this;
+	        args = arguments;
+	        later = function() {
+	          timeout = null;
+	          if (!immediate) {
+	            return fn.apply(context, args);
+	          }
+	        };
+	        callNow = immediate && !timeout;
+	        clearTimeout(timeout);
+	        timeout = setTimeout(later, wait);
+	        if (callNow) {
+	          return fn.apply(context, args);
+	        }
+	      };
+	    };
+	    set_boundingRect = function() {
+	      var arq;
+	      rectangle = root.getBoundingClientRect();
+	      width = rectangle.width, height = rectangle.height;
+	      arq = {
+	        viewport_width: width,
+	        viewport_height: height
+	      };
+	      return store.dispatch(set_bounding_rect(arq));
+	    };
+	    window.onresize = debounce(set_boundingRect, 200, false);
+	    return React_DOM.render(root_component(), root);
+	  };
+	})(this);
 
 
 /***/ },
@@ -93,6 +148,8 @@
 	request = __webpack_require__(26);
 
 	Rx = __webpack_require__(31);
+
+	window.primus = new Primus('http://localhost:2746', {});
 
 	mat3 = gl_mat.mat3;
 
@@ -43196,6 +43253,32 @@
 	    return AnimationFrameScheduler;
 	}(AsyncScheduler_1.AsyncScheduler));
 	exports.AnimationFrameScheduler = AnimationFrameScheduler;
+
+
+/***/ },
+/* 372 */
+/***/ function(module, exports) {
+
+	module.exports = rr({
+	  create_world: function() {
+	    return primus.write({
+	      event_type: 'create_world'
+	    });
+	  },
+	  render: function() {
+	    return div(null, h1(null, " hello root"), h3(null, " make some buttons "), button({
+	      onClick: this.create_world
+	    }, "create world"), div(null, h3(null, "worlds list"), ul(null, li({
+	      key: "333",
+	      onClick: function() {
+	        return c('goto this world');
+	      },
+	      style: {
+	        cursor: 'pointer'
+	      }
+	    }, "world one"))));
+	  }
+	});
 
 
 /***/ }

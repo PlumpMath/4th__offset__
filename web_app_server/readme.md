@@ -13,4 +13,6 @@ For now this server contains the Primus websocket endpoint, but later that will 
 
 For development I recommend:
 
-`nodemon -x iced server_000_.iced`
+
+
+`nodemon --watch primus_layer -x iced ./web_app_server/server_000_.iced`

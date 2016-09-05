@@ -23,3 +23,12 @@ for now just doing a react web client
 #### data layer
 
 for now just doing a simple redis implementation.  will look to optimise and include other tools later.
+
+
+
+
+### development setup
+
+`webpack -w`
+
+`nodemon --watch primus_layer --watch web_app_server -x iced ./web_app_server/server_000_.iced`

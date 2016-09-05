@@ -4,7 +4,7 @@
 
 c = -> console.log.apply console, arguments
 
-
+# exports.admin__rpc__api__000 can be required for unit testing
 
 exports.admin__rpc__api__000 = admin_rpc_api = (data, cb) ->
 
@@ -15,7 +15,7 @@ exports.admin__rpc__api__000 = admin_rpc_api = (data, cb) ->
 
         when 'create_league'
             c 'creating league'
-            cb 'creating world'
+            cb 'creating league'
 
         when 'create_team'
             c 'creating team'
