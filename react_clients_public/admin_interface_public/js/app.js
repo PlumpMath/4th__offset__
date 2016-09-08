@@ -55,30 +55,6 @@
 
 	__webpack_require__(2);
 
-	c('here we are in the app');
-
-	c('primus is', Primus);
-
-	primus.on('data', function(data) {
-	  return c('got some data from the server', data);
-	});
-
-	primus.write({
-	  event_type: 'create_world'
-	});
-
-	setTimeout(function() {
-	  return primus.write({
-	    event_type: 'create_league'
-	  });
-	}, 1000);
-
-	setTimeout(function() {
-	  return primus.write({
-	    event_type: 'create_team'
-	  });
-	}, 2000);
-
 	root = document.getElementById('root');
 
 	root_component = __webpack_require__(372);
@@ -110,73 +86,65 @@
 	      };
 	    };
 	    set_boundingRect = function() {
-	      var arq;
 	      rectangle = root.getBoundingClientRect();
 	      width = rectangle.width, height = rectangle.height;
-	      arq = {
-	        viewport_width: width,
-	        viewport_height: height
-	      };
-	      return store.dispatch(set_bounding_rect(arq));
+	      window.width = width;
+	      window.height = height;
+	      return React_DOM.render(root_component(), root);
 	    };
 	    window.onresize = debounce(set_boundingRect, 200, false);
 	    return React_DOM.render(root_component(), root);
 	  };
 	})(this);
 
+	primus.on('data', function(data) {
+	  return c('got some data from the server', data);
+	});
+
+	primus.write({
+	  event_type: 'create_world'
+	});
+
+	setTimeout(function() {
+	  return primus.write({
+	    event_type: 'create_league'
+	  });
+	}, 1000);
+
+	setTimeout(function() {
+	  return primus.write({
+	    event_type: 'create_team'
+	  });
+	}, 2000);
+
 
 /***/ },
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var React, React_DOM, Rx, _, a, arq, body, c, circle, clipPath, code, d, defs, div, dom_stuff, ellipse, feBlend, feGaussianBlur, feMerge, feMergeNode, feOffset, filter, foreignObject, g, gl_mat, h1, h2, h3, h4, h5, h6, i, image, input, item, k, len, li, line, linearGradient, mat3, ol, p, path, pattern, polygon, polyline, pre, radialGradient, rect, ref, ref1, request, shortid, span, stop, strong, svg, text, textArea, tspan, ul, v, vec2, vec3;
+	var a, body, circle, clipPath, code, d, defs, div, dom_stuff, ellipse, feBlend, feGaussianBlur, feMerge, feMergeNode, feOffset, filter, foreignObject, g, h1, h2, h3, h4, h5, h6, i, image, input, item, k, len, li, line, linearGradient, ol, p, path, pattern, polygon, polyline, pre, radialGradient, rect, ref, ref1, span, stop, strong, svg, text, textArea, tspan, ul, v;
 
-	c = function() {
-	  return console.log.apply(console, arguments);
-	};
+	window.c = console.log.bind(console);
 
-	_ = __webpack_require__(3);
+	window._ = __webpack_require__(3);
 
-	React = __webpack_require__(5);
+	window.React = __webpack_require__(5);
 
-	React_DOM = __webpack_require__(6);
+	window.React_DOM = __webpack_require__(6);
 
-	shortid = __webpack_require__(7);
+	window.shortid = __webpack_require__(7);
 
-	gl_mat = __webpack_require__(16);
+	window.gl_mat = __webpack_require__(16);
 
-	request = __webpack_require__(26);
+	window.request = __webpack_require__(26);
 
-	Rx = __webpack_require__(31);
+	window.Rx = __webpack_require__(31);
 
 	window.primus = new Primus('http://localhost:2746', {});
 
-	mat3 = gl_mat.mat3;
-
-	vec3 = gl_mat.vec3;
-
-	vec2 = gl_mat.vec2;
-
-	arq = {
-	  mat3: mat3,
-	  vec3: vec3,
-	  vec2: vec2,
-	  request: request,
-	  gl_mat: gl_mat,
-	  _: _,
-	  React: React,
-	  React_DOM: React_DOM,
-	  rr: function() {
-	    return React.createFactory(React.createClass.apply(React, arguments));
-	  },
-	  c: c,
-	  shortid: shortid
+	window.rr = function() {
+	  return React.createFactory(React.createClass.apply(React, arguments));
 	};
-
-	for (k in arq) {
-	  v = arq[k];
-	  window[k] = v;
-	}
 
 	dom_stuff = (ref = React.DOM, p = ref.p, strong = ref.strong, pre = ref.pre, div = ref.div, h1 = ref.h1, h2 = ref.h2, h3 = ref.h3, h4 = ref.h4, h5 = ref.h5, h6 = ref.h6, span = ref.span, svg = ref.svg, circle = ref.circle, tspan = ref.tspan, rect = ref.rect, ul = ref.ul, line = ref.line, li = ref.li, ol = ref.ol, code = ref.code, a = ref.a, input = ref.input, defs = ref.defs, clipPath = ref.clipPath, body = ref.body, linearGradient = ref.linearGradient, stop = ref.stop, g = ref.g, path = ref.path, d = ref.d, polygon = ref.polygon, image = ref.image, pattern = ref.pattern, filter = ref.filter, feBlend = ref.feBlend, feOffset = ref.feOffset, polyline = ref.polyline, feGaussianBlur = ref.feGaussianBlur, feMergeNode = ref.feMergeNode, feMerge = ref.feMerge, radialGradient = ref.radialGradient, foreignObject = ref.foreignObject, text = ref.text, textArea = ref.textArea, ellipse = ref.ellipse, pattern = ref.pattern, ref);
 
