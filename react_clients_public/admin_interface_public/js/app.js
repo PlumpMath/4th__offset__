@@ -197,6 +197,16 @@
 
 	window.Carousel_Caption = rc(ReactBootstrap.Carousel.Caption);
 
+	window.Modal_Dialog = rc(ReactBootstrap.Modal.Dialog);
+
+	window.Modal_Header = rc(ReactBootstrap.Modal.Header);
+
+	window.Modal_Title = rc(ReactBootstrap.Modal.Title);
+
+	window.Modal_Body = rc(ReactBootstrap.Modal.Body);
+
+	window.Modal_Footer = rc(ReactBootstrap.Modal.Footer);
+
 
 /***/ },
 /* 3 */
@@ -62189,6 +62199,29 @@
 	];
 
 	module.exports = rr({
+	  add_world_attempt: function() {
+	    mock_worlds.push({
+	      uuid: shortid(),
+	      world_name: this.state.add_world_name_candidate,
+	      number_leagues: 0
+	    });
+	    return this.setState({
+	      adding_world: false,
+	      add_world_name_candidate: null
+	    });
+	  },
+	  getInitialState: function() {
+	    return {
+	      adding_world: false,
+	      add_world_name_candidate: null
+	    };
+	  },
+	  componentDidUpdate: function(prevProps, prevState) {
+	    if ((prevState.adding_world === false) && (this.state.adding_world === true)) {
+	      c(this.refs.worldname);
+	      return this.refs.worldname.focus();
+	    }
+	  },
 	  render: function() {
 	    var idx, uid, world;
 	    return div({
@@ -62198,11 +62231,62 @@
 	        display: 'flex',
 	        flexDirection: 'column',
 	        alignSelf: 'center',
-	        justifyContent: 'flex-start',
+	        justifyContent: 'space-between',
 	        alignItems: 'center',
 	        background: 'antiquewhite'
 	      }
-	    }, PageHeader(null, "Universe View"), Table({
+	    }, this.state.adding_world ? div({
+	      className: 'static-modal'
+	    }, Modal_Dialog(null, Modal_Header(null, Modal_Title(null, "Adding a world")), Modal_Body(null, FormGroup(null, InputGroup(null, FormControl({
+	      autoFocus: true,
+	      ref: 'worldname',
+	      type: 'text',
+	      placeholder: 'world name',
+	      onKeyPress: (function(_this) {
+	        return function(e) {
+	          if (e.key === 'Enter') {
+	            return _this.add_world_attempt();
+	          }
+	        };
+	      })(this),
+	      onChange: (function(_this) {
+	        return function(e) {
+	          return _this.setState({
+	            add_world_name_candidate: e.currentTarget.value
+	          });
+	        };
+	      })(this)
+	    }), InputGroup_Button(null, Button({
+	      onClick: (function(_this) {
+	        return function() {
+	          return _this.add_world_attempt();
+	        };
+	      })(this)
+	    }, "done"))))), Modal_Footer(null, Button({
+	      onClick: (function(_this) {
+	        return function() {
+	          return _this.setState({
+	            adding_world: false
+	          });
+	        };
+	      })(this)
+	    }, "Close")))) : void 0, PageHeader(null, "Universe View"), div({
+	      style: {
+	        display: 'flex',
+	        flexDirection: 'column',
+	        width: window_width,
+	        height: .7 * window_height
+	      }
+	    }, Button({
+	      style: {},
+	      onClick: (function(_this) {
+	        return function() {
+	          return _this.setState({
+	            adding_world: true
+	          });
+	        };
+	      })(this)
+	    }, "Create World"), Table({
 	      striped: true,
 	      bordered: true,
 	      condensed: true,
@@ -62230,7 +62314,7 @@
 	        }, td(null, "" + (idx + 1)), td(null, world.uuid), td(null, world.world_name), td(null, world.number_leagues)));
 	      }
 	      return results;
-	    }).call(this))));
+	    }).call(this)))));
 	  }
 	});
 

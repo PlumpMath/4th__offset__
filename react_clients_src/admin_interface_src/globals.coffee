@@ -46,3 +46,9 @@ window.InputGroup_Button = rc ReactBootstrap.InputGroup.Button
 window.FormControl_Feedback = rc ReactBootstrap.FormControl.Feedback
 window.Carousel_Item = rc ReactBootstrap.Carousel.Item
 window.Carousel_Caption = rc ReactBootstrap.Carousel.Caption
+
+window.Modal_Dialog = rc ReactBootstrap.Modal.Dialog
+window.Modal_Header = rc ReactBootstrap.Modal.Header
+window.Modal_Title = rc ReactBootstrap.Modal.Title
+window.Modal_Body = rc ReactBootstrap.Modal.Body
+window.Modal_Footer = rc ReactBootstrap.Modal.Footer
