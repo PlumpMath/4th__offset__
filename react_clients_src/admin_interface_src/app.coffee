@@ -1,7 +1,8 @@
 require './globals.coffee'
 root_000 = require('./components/root_000_.coffee')
 root_001 = require './components/root_001_.coffee'
-root_component = root_001
+root_002 = require './components/root_002_.coffee'
+root_component = root_002   
 root = document.getElementById 'root'
 window.onload = =>
     rectangle = root.getBoundingClientRect()

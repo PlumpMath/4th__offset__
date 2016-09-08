@@ -15,6 +15,8 @@ Displays a list of leagues.  Clicking on a league takes to that league View.
 
 Clicking on an add-league button opens a dialog to create a new league.
 
+We could have more information about each world, therefore it makes sense to use a bootstrap table
+
 ## League View
 
 Displays a list of teams.  Clicking on a team takes to that team view.

@@ -51,7 +51,7 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var root, root_000, root_001, root_component;
+	var root, root_000, root_001, root_002, root_component;
 
 	__webpack_require__(2);
 
@@ -59,7 +59,9 @@
 
 	root_001 = __webpack_require__(373);
 
-	root_component = root_001;
+	root_002 = __webpack_require__(627);
+
+	root_component = root_002;
 
 	root = document.getElementById('root');
 
@@ -128,7 +130,7 @@
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Button, a, body, bootstrap_stuff, circle, clipPath, code, d, defs, div, dom_stuff, ellipse, feBlend, feGaussianBlur, feMerge, feMergeNode, feOffset, filter, foreignObject, g, h1, h2, h3, h4, h5, h6, i, image, input, item, k, len, li, line, linearGradient, ol, p, path, pattern, polygon, polyline, pre, radialGradient, rect, ref, ref1, span, stop, strong, svg, text, textArea, tspan, ul, v;
+	var Accordion, Alert, Badge, Breadcrumb, Button, ButtonGroup, ButtonToolbar, Carousel, Checkbox, Clearfix, Col, Collapse, ControlLabel, Dropdown, DropdownButton, Fade, Form, FormControl, FormGroup, Glyphicon, Grid, HelpBlock, Image, InputGroup, Jumbotron, Label, ListGroup, ListGroupItem, Media, MenuItem, Modal, Nav, NavItem, Navbar, Overlay, Pager, Pagination, Panel, PanelGroup, Popover, ProgressBar, Radio, ResponsiveEmbed, Row, SplitBUtton, Tab, TabContainer, TabContent, TabPane, Table, Tabs, Thumbnail, Tooltip, Well, a, body, bootstrap_stuff, circle, clipPath, code, d, defs, div, dom_stuff, ellipse, feBlend, feGaussianBlur, feMerge, feMergeNode, feOffset, filter, foreignObject, g, h1, h2, h3, h4, h5, h6, i, image, input, item, k, len, li, line, linearGradient, ol, p, path, pattern, polygon, polyline, pre, radialGradient, rect, ref, ref1, span, stop, strong, svg, tbody, text, textArea, th, thead, tr, tspan, ul, v;
 
 	window.c = console.log.bind(console);
 
@@ -156,7 +158,7 @@
 	  return React.createFactory.apply(React, arguments);
 	};
 
-	dom_stuff = (ref = React.DOM, p = ref.p, strong = ref.strong, pre = ref.pre, div = ref.div, h1 = ref.h1, h2 = ref.h2, h3 = ref.h3, h4 = ref.h4, h5 = ref.h5, h6 = ref.h6, span = ref.span, svg = ref.svg, circle = ref.circle, tspan = ref.tspan, rect = ref.rect, ul = ref.ul, line = ref.line, li = ref.li, ol = ref.ol, code = ref.code, a = ref.a, input = ref.input, defs = ref.defs, clipPath = ref.clipPath, body = ref.body, linearGradient = ref.linearGradient, stop = ref.stop, g = ref.g, path = ref.path, d = ref.d, polygon = ref.polygon, image = ref.image, pattern = ref.pattern, filter = ref.filter, feBlend = ref.feBlend, feOffset = ref.feOffset, polyline = ref.polyline, feGaussianBlur = ref.feGaussianBlur, feMergeNode = ref.feMergeNode, feMerge = ref.feMerge, radialGradient = ref.radialGradient, foreignObject = ref.foreignObject, text = ref.text, textArea = ref.textArea, ellipse = ref.ellipse, pattern = ref.pattern, ref);
+	dom_stuff = (ref = React.DOM, p = ref.p, strong = ref.strong, pre = ref.pre, div = ref.div, h1 = ref.h1, h2 = ref.h2, h3 = ref.h3, h4 = ref.h4, h5 = ref.h5, h6 = ref.h6, span = ref.span, svg = ref.svg, circle = ref.circle, tspan = ref.tspan, rect = ref.rect, ul = ref.ul, line = ref.line, li = ref.li, ol = ref.ol, code = ref.code, a = ref.a, input = ref.input, defs = ref.defs, clipPath = ref.clipPath, body = ref.body, linearGradient = ref.linearGradient, stop = ref.stop, g = ref.g, path = ref.path, d = ref.d, polygon = ref.polygon, image = ref.image, pattern = ref.pattern, filter = ref.filter, feBlend = ref.feBlend, feOffset = ref.feOffset, polyline = ref.polyline, feGaussianBlur = ref.feGaussianBlur, feMergeNode = ref.feMergeNode, feMerge = ref.feMerge, radialGradient = ref.radialGradient, foreignObject = ref.foreignObject, text = ref.text, textArea = ref.textArea, ellipse = ref.ellipse, pattern = ref.pattern, thead = ref.thead, th = ref.th, tr = ref.tr, tbody = ref.tbody, ref);
 
 	for (k in dom_stuff) {
 	  v = dom_stuff[k];
@@ -171,13 +173,29 @@
 
 	window.ReactBootstrap = __webpack_require__(374);
 
-	bootstrap_stuff = (Button = ReactBootstrap.Button, ReactBootstrap);
+	bootstrap_stuff = (Button = ReactBootstrap.Button, ButtonGroup = ReactBootstrap.ButtonGroup, ButtonToolbar = ReactBootstrap.ButtonToolbar, DropdownButton = ReactBootstrap.DropdownButton, SplitBUtton = ReactBootstrap.SplitBUtton, Dropdown = ReactBootstrap.Dropdown, MenuItem = ReactBootstrap.MenuItem, Modal = ReactBootstrap.Modal, Tooltip = ReactBootstrap.Tooltip, Popover = ReactBootstrap.Popover, Overlay = ReactBootstrap.Overlay, Nav = ReactBootstrap.Nav, NavItem = ReactBootstrap.NavItem, Navbar = ReactBootstrap.Navbar, Breadcrumb = ReactBootstrap.Breadcrumb, Tabs = ReactBootstrap.Tabs, Tab = ReactBootstrap.Tab, TabContainer = ReactBootstrap.TabContainer, TabContent = ReactBootstrap.TabContent, TabPane = ReactBootstrap.TabPane, Pagination = ReactBootstrap.Pagination, Pager = ReactBootstrap.Pager, Grid = ReactBootstrap.Grid, Row = ReactBootstrap.Row, Col = ReactBootstrap.Col, Clearfix = ReactBootstrap.Clearfix, Jumbotron = ReactBootstrap.Jumbotron, ListGroup = ReactBootstrap.ListGroup, ListGroupItem = ReactBootstrap.ListGroupItem, Table = ReactBootstrap.Table, Panel = ReactBootstrap.Panel, PanelGroup = ReactBootstrap.PanelGroup, Accordion = ReactBootstrap.Accordion, Well = ReactBootstrap.Well, FormGroup = ReactBootstrap.FormGroup, FormControl = ReactBootstrap.FormControl, ControlLabel = ReactBootstrap.ControlLabel, Checkbox = ReactBootstrap.Checkbox, Radio = ReactBootstrap.Radio, HelpBlock = ReactBootstrap.HelpBlock, Form = ReactBootstrap.Form, InputGroup = ReactBootstrap.InputGroup, Image = ReactBootstrap.Image, Thumbnail = ReactBootstrap.Thumbnail, ResponsiveEmbed = ReactBootstrap.ResponsiveEmbed, Carousel = ReactBootstrap.Carousel, Media = ReactBootstrap.Media, Glyphicon = ReactBootstrap.Glyphicon, Label = ReactBootstrap.Label, Badge = ReactBootstrap.Badge, Alert = ReactBootstrap.Alert, ProgressBar = ReactBootstrap.ProgressBar, Collapse = ReactBootstrap.Collapse, Fade = ReactBootstrap.Fade, ReactBootstrap);
 
 	for (k in bootstrap_stuff) {
 	  v = bootstrap_stuff[k];
 	  v = rc(v);
 	  window[k] = v;
 	}
+
+	window.Breadcrumb_Item = rc(ReactBootstrap.Breadcrumb.Item);
+
+	window.Pager_Item = rc(ReactBootstrap.Pager.Item);
+
+	window.FormControl_Static = rc(ReactBootstrap.FormControl.Static);
+
+	window.InputGroup_Addon = rc(ReactBootstrap.InputGroup.Addon);
+
+	window.InputGroup_Button = rc(ReactBootstrap.InputGroup.Button);
+
+	window.FormControl_Feedback = rc(ReactBootstrap.FormControl.Feedback);
+
+	window.Carousel_Item = rc(ReactBootstrap.Carousel.Item);
+
+	window.Carousel_Caption = rc(ReactBootstrap.Carousel.Caption);
 
 
 /***/ },
@@ -62128,6 +62146,94 @@
 	exports.bootstrapUtils = _bootstrapUtils;
 	exports.createChainedFunction = _createChainedFunction3['default'];
 	exports.ValidComponentChildren = _ValidComponentChildren3['default'];
+
+/***/ },
+/* 627 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var universe_view;
+
+	universe_view = __webpack_require__(628);
+
+	module.exports = rr({
+	  render: function() {
+	    return universe_view();
+	  }
+	});
+
+
+/***/ },
+/* 628 */
+/***/ function(module, exports) {
+
+	var mock_worlds;
+
+	mock_worlds = [
+	  {
+	    uuid: shortid(),
+	    world_name: 'Mercury',
+	    number_leagues: 3
+	  }, {
+	    uuid: shortid(),
+	    world_name: 'Venus',
+	    number_leagues: 8
+	  }, {
+	    uuid: shortid(),
+	    world_name: 'Earth',
+	    number_leagues: 38
+	  }, {
+	    uuid: shortid(),
+	    world_name: 'Mars',
+	    number_leagues: 22
+	  }
+	];
+
+	module.exports = rr({
+	  render: function() {
+	    var idx, uid, world;
+	    return div({
+	      style: {
+	        width: window_width,
+	        height: window_height,
+	        display: 'flex',
+	        flexDirection: 'column',
+	        alignSelf: 'center',
+	        justifyContent: 'flex-start',
+	        alignItems: 'center',
+	        background: 'antiquewhite'
+	      }
+	    }, PageHeader(null, "Universe View"), Table({
+	      striped: true,
+	      bordered: true,
+	      condensed: true,
+	      hover: true
+	    }, thead(null, tr(null, th(null, '#'), th(null, 'uuid'), th(null, 'world-name'), th(null, 'leagues'))), tbody(null, (function() {
+	      var i, len, results;
+	      results = [];
+	      for (idx = i = 0, len = mock_worlds.length; i < len; idx = ++i) {
+	        world = mock_worlds[idx];
+	        uid = world.uuid;
+	        results.push(tr({
+	          key: world.uuid,
+	          style: {
+	            cursor: 'pointer'
+	          },
+	          onClick: (function(_this) {
+	            return function(idx, uid) {
+	              return function(e) {
+	                c(e.currentTarget);
+	                c(idx);
+	                return c(uid);
+	              };
+	            };
+	          })(this)(idx, uid)
+	        }, td(null, "" + (idx + 1)), td(null, world.uuid), td(null, world.world_name), td(null, world.number_leagues)));
+	      }
+	      return results;
+	    }).call(this))));
+	  }
+	});
+
 
 /***/ }
 /******/ ]);
