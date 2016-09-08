@@ -62163,7 +62163,7 @@
 
 	var universe_view;
 
-	universe_view = __webpack_require__(628);
+	universe_view = __webpack_require__(629);
 
 	module.exports = rr({
 	  render: function() {
@@ -62173,7 +62173,8 @@
 
 
 /***/ },
-/* 628 */
+/* 628 */,
+/* 629 */
 /***/ function(module, exports) {
 
 	var mock_worlds;
