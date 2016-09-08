@@ -10,6 +10,8 @@ body_parser = require 'body-parser'
 public_dir = path.resolve __dirname, '../react_clients_public', 'admin_interface_public'
 index = '/dev_index.html'
 app.use '/js', express.static(path.join(public_dir, '/js'))
+app.use '/css', express.static(path.join(public_dir, '/css'))
+app.use '/fonts', express.static(path.join(public_dir, '/fonts'))
 app.all '/*', (req, res, next) ->
     res.sendFile path.join(public_dir, index)
 app.use express.static(public_dir)

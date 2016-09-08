@@ -13,4 +13,17 @@ module.exports = rr
                     height: .3 * window_height
                     width: .3 * window_width
                     background: 'gold'
-                    
+            div
+                style:
+                    height: .3 * window_height
+                    width: .3 * window_width
+                    background: 'tomato'
+                    display: 'flex'
+                    flexDirection: 'row'
+                    alignItems: 'center'
+                    justifyContent: 'center'
+                button null, "hello"
+                button null, "increment"
+                Button
+                    bsStyle: "success"
+                    "something"
