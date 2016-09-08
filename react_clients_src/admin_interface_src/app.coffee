@@ -1,9 +1,13 @@
 require './globals.coffee'
+root_000 = require('./components/root_000_.coffee')
+root_001 = require './components/root_001_.coffee'
+root_component = root_001
 root = document.getElementById 'root'
-root_component = require('./components/root_000_.coffee')
 window.onload = =>
     rectangle = root.getBoundingClientRect()
     {width, height} = rectangle
+    window.window_width = width
+    window.window_height = height
     debounce = (fn, wait, immediate) ->
         timeout = 'scoped here'
         ->
@@ -19,8 +23,8 @@ window.onload = =>
     set_boundingRect = ->
         rectangle = root.getBoundingClientRect()
         {width, height} = rectangle
-        window.width = width
-        window.height = height
+        window.window_width = width
+        window.window_height = height
         React_DOM.render root_component(), root
     window.onresize = debounce(set_boundingRect, 200, false)
     React_DOM.render root_component(), root

@@ -51,19 +51,25 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var root, root_component;
+	var root, root_000, root_001, root_component;
 
 	__webpack_require__(2);
 
-	root = document.getElementById('root');
+	root_000 = __webpack_require__(372);
 
-	root_component = __webpack_require__(372);
+	root_001 = __webpack_require__(373);
+
+	root_component = root_001;
+
+	root = document.getElementById('root');
 
 	window.onload = (function(_this) {
 	  return function() {
 	    var debounce, height, rectangle, set_boundingRect, width;
 	    rectangle = root.getBoundingClientRect();
 	    width = rectangle.width, height = rectangle.height;
+	    window.window_width = width;
+	    window.window_height = height;
 	    debounce = function(fn, wait, immediate) {
 	      var timeout;
 	      timeout = 'scoped here';
@@ -88,8 +94,8 @@
 	    set_boundingRect = function() {
 	      rectangle = root.getBoundingClientRect();
 	      width = rectangle.width, height = rectangle.height;
-	      window.width = width;
-	      window.height = height;
+	      window.window_width = width;
+	      window.window_height = height;
 	      return React_DOM.render(root_component(), root);
 	    };
 	    window.onresize = debounce(set_boundingRect, 200, false);
@@ -43245,6 +43251,30 @@
 	        cursor: 'pointer'
 	      }
 	    }, "world one"))));
+	  }
+	});
+
+
+/***/ },
+/* 373 */
+/***/ function(module, exports) {
+
+	module.exports = rr({
+	  render: function() {
+	    return div({
+	      style: {
+	        display: 'flex',
+	        flexDirection: 'column',
+	        alignItems: 'center',
+	        justifyContent: 'center'
+	      }
+	    }, div({
+	      style: {
+	        height: .3 * window_height,
+	        width: .3 * window_width,
+	        background: 'gold'
+	      }
+	    }));
 	  }
 	});
 
