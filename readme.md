@@ -12,6 +12,13 @@ React is famously lightweight (contrast with the thermonuclear do-everything par
 Rudy Yardley's [rxjs-as-redux](https://github.com/ryardley/rxjs-as-redux)
 
 
+#### Some other Rxjs & Redux resources:
+
+https://github.com/jas-chen/rx-redux
+
+https://medium.com/@JasChen/reactive-react-with-rxjs-and-redux-a65d010cc876#.t4xctqnem
+
+
 ### tourney pool
 for the first exercise will be implementing the tourney pool idea (ht razorgrip)
 or any other app idea that comes to me.  (if you have any requests email me), it's not too important which exact app i'm implementing, more trying to work on something demanding some complexity : websockets, complex state, etc.
